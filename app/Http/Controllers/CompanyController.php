@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class CompanyController extends Controller
 {
+    public function index()
+    {
+        $companies = Company::all();
+        return view('company.index', compact('companies'));
+    } 
+
     private function handleLogoUpload(Request $request, $currentLogo = null)
     {
         if ($request->hasFile('logo')) {
@@ -37,11 +43,7 @@ class CompanyController extends Controller
         return $currentLogo;
     }
 
-    public function index()
-    {
-        $companies = Company::all();
-        return view('company.index', compact('companies'));
-    }
+   
 
     public function create()
     {
@@ -72,17 +74,19 @@ class CompanyController extends Controller
 
         return redirect()->route('companies.index')->with('success', 'Company updated successfully!');
     }
+   public function destroy($id)
+{
+    $company = Company::findOrFail($id);
 
-    public function destroy($id)
-    {
-        $company = Company::findOrFail($id);
-
-        if ($company->logo) {
-            Storage::delete($company->logo);
-        }
-
+    if (request('confirm_delete')) {
+        
+        $company->employees()->delete();
         $company->delete();
 
-        return redirect()->route('companies.index')->with('success', 'Company deleted successfully!');
+        return redirect()->route('companies.index')->with('success', 'Company and employees deleted successfully!');
+    } else {
+        return redirect()->back();
     }
+}
+
 }

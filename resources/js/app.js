@@ -23,7 +23,6 @@ document.addEventListener('alpine:init', () => {
                 lengthMenu: [10, 25, 50, 100],
                 language: {
                     search: 'Search:',
-                    info: 'Showing _START_ to _END_ of _TOTAL_ entries',
                     paginate: {
                         next: 'Next',
                         previous: 'Previous'

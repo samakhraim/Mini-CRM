@@ -58,6 +58,8 @@
                                             <form action="{{ route('companies.destroy', $company->id) }}" method="POST" class="inline">
                                                 @csrf
                                                 @method('DELETE')
+                                                <input type="hidden" name="confirm_delete" value="1"> 
+
                                                 <input type="submit" class="text-white" value="Delete" />
                                             </form>
                                         </x-danger-button>

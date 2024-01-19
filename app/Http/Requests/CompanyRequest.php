@@ -20,7 +20,7 @@ class CompanyRequest extends FormRequest
             'logo' => [
                 'nullable',
                 'image',
-                'mimes:jpeg,png,jpg,gif',
+                'mimes:jpeg,png,jpg,',
                 'max:2048',
                 'dimensions:min_width=100,min_height=100',
             ],

@@ -5,7 +5,6 @@
         </h2>
     </x-slot>
 
-    <!-- Your main content -->
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -36,9 +35,9 @@
                             'label' => 'Logo',
                             'type' => 'file',
                             'attributes' => [
-                                'accept' => 'image/jpeg, image/png, image/gif', // Specify accepted image types
+                                'accept' => 'image/jpeg, image/png, image/jpg 
                             ],
-                            'value' => asset('storage/' . $company->logo), // Set the logo URL here
+                            'value' => asset('storage/' . $company->logo), 
                         ],
                     ]"
                     :submitButtonLabel="'Update Company'"

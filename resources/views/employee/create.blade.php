@@ -5,11 +5,16 @@
         </h2>
     </x-slot>
 
-    <!-- Your main content -->
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     <x-form
                         :action="route('employees.store')"
                         :method="'POST'"
@@ -20,7 +25,6 @@
                                 'type' => 'text',
                                 'value' => old('first_name'),
                                 'required' => true, 
-
                             ],
                             [
                                 'name' => 'last_name',
@@ -28,7 +32,6 @@
                                 'type' => 'text',
                                 'value' => old('last_name'),
                                 'required' => true, 
-
                             ],
                             [
                                 'name' => 'email',
@@ -44,11 +47,11 @@
                             ],
                             [
                                 'name' => 'company_id',
-                                'label' => 'Company id',
+                                'label' => 'Company',
                                 'type' => 'select',
+                                'options' => $companies, 
                                 'value' => old('company_id'),
                                 'required' => true, 
-
                             ],
                         ]"
                         :submitButtonLabel="'Create Employee'"

@@ -38,18 +38,15 @@
         </main>
     </div>
 
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Bootstrap JS (Requires jQuery) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
-    <!-- Your custom scripts -->
     <script src="{{ asset('build/assets/app-n7x1UMeh.js') }}"></script>
 
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
 </body>
 </html>

@@ -10,9 +10,16 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     <table id="companiesTable" class="table table-bordered" style="width:100%">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone Number</th>
@@ -23,6 +30,7 @@
                         <tbody>
                             @foreach($employees as $employee)
                                 <tr>
+                                    <td>{{ $employee->id }}</td>
                                     <td>{{ $employee->first_name }} {{ $employee->last_name }}</td>
                                     <td>{{ $employee->email }}</td>
                                     <td>{{ $employee->phone }}</td>
@@ -35,11 +43,10 @@
         <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" class="inline">
             @csrf
             @method('DELETE')
-            <input type="submit" class="text-red-500" value="Delete" />
+            <input type="submit" class="text-white" value="Delete" />
         </form>
     </x-danger-button>
 </td>
-
                                 </tr>
                             @endforeach
                         </tbody>

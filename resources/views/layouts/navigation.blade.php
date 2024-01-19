@@ -15,6 +15,23 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <!-- Companies Link -->
+                    <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.*')">
+                        {{ __('Companies') }}
+                    </x-nav-link>
+                    <!-- Add company  Link -->
+                    <x-nav-link :href="route('companies.create')" :active="request()->routeIs('companies.create')">
+                          {{ __('Add  Company') }}
+                                              </x-nav-link>
+                    <!-- Employees Link -->
+                    <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.*')">
+                        {{ __('Employees') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('employees.create')" :active="request()->routeIs('employees.create')">
+    {{ __('Add Employee') }}
+</x-nav-link>
+
+                  
                 </div>
             </div>
 

@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
              'email' => 'admin@admin.com',
              'password'=>'password'
     ]);
-    $this->call(CompanySeeder::class);
-    $this->call(EmployeeSeeder::class); 
+   // $this->call(CompanySeeder::class);
+    //$this->call(EmployeeSeeder::class); 
 
     }
 }

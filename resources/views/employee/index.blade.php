@@ -1,4 +1,3 @@
-<!-- resources/views/company/index.blade.php -->
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -14,29 +13,33 @@
                     <table id="companiesTable" class="table table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th> Name</th>
-                                <th>Email </th>
+                                <th>Name</th>
+                                <th>Email</th>
                                 <th>Phone Number</th>
                                 <th>Company</th>
-                                <th>Actions</th>
-
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($employees as $employee)
                                 <tr>
-                                    <td>{{ $employee->first_name }}{{ $employee->last_name }} </td>
+                                    <td>{{ $employee->first_name }} {{ $employee->last_name }}</td>
                                     <td>{{ $employee->email }}</td>
                                     <td>{{ $employee->phone }}</td>
                                     <td>{{ $employee->company->name }}</td>
                                     <td>
-                                        <a href="{{ route('employees.edit', $employee->id) }}" class="text-blue-500">Edit</a>
-                                        <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" class="inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="text-red-500">Delete</button>
-                                        </form>
-                                    </td>
+    <a href="{{ route('employees.edit', $employee->id) }}" class="text-blue-500">
+        <x-primary-button>Edit</x-primary-button>
+    </a>
+    <x-danger-button>
+        <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" class="inline">
+            @csrf
+            @method('DELETE')
+            <input type="submit" class="text-red-500" value="Delete" />
+        </form>
+    </x-danger-button>
+</td>
+
                                 </tr>
                             @endforeach
                         </tbody>
@@ -45,6 +48,4 @@
             </div>
         </div>
     </div>
- 
-   
 </x-app-layout>

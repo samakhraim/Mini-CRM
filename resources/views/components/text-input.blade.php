@@ -1,3 +1,18 @@
-@props(['disabled' => false])
+<!-- resources/views/components/text-input.blade.php -->
 
-<input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']) !!}>
+@props(['name', 'label', 'type', 'value', 'required' => false])
+
+<div class="mb-4">
+    <label for="{{ $name }}" class="block text-gray-600 font-bold">{{ $label }}</label>
+    <input
+        type="{{ $type }}"
+        name="{{ $name }}"
+        id="{{ $name }}"
+        value="{{ $value }}"
+        class="form-input"
+        @if($required) required @endif
+    >
+    @error($name)
+        <span class="text-red-500">{{ $message }}</span>
+    @enderror
+</div>

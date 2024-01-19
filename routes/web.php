@@ -29,12 +29,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
     
     Route::resource('companies', CompanyController::class);
-    
-    Route::resource('employees', EmployeeController::class);
-    Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
-    Route::delete('companies/{id}', [CompanyController::class, 'destroy'])->name('companies.destroy');
 
-    Route::get('companies/{id}/edit', 'CompanyController@edit')->name('companies.edit');
+
+    Route::resource('employees', EmployeeController::class);
+ 
 });
 
 require __DIR__.'/auth.php';

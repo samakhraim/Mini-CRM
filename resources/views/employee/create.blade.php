@@ -44,7 +44,7 @@
                             ],
                             [
                                 'name' => 'company_id',
-                                'label' => 'Company Name',
+                                'label' => 'Company id',
                                 'type' => 'select',
                                 'value' => old('company_id'),
                                 'required' => true, 

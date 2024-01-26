@@ -35,7 +35,7 @@
                             'label' => 'Logo',
                             'type' => 'file',
                             'attributes' => [
-                                'accept' => 'image/jpeg, image/png, image/jpg 
+                                'accept' => 'image/jpeg, image/png, image/jpg', // Fix the missing single quote here
                             ],
                             'value' => asset('storage/' . $company->logo), 
                         ],

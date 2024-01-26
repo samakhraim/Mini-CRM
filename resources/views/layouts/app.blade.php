@@ -8,14 +8,14 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="{{ asset('build/assets/app-Z5wcexpj.css') }}" rel="stylesheet" type="text/css">
-
+    <link href="{{ asset('build/assets/app-45meS5dK.css') }}" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
 
 </head>
 <body class="font-sans antialiased">
@@ -44,9 +44,7 @@
 
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
-    <script src="{{ asset('build/assets/app-n7x1UMeh.js') }}"></script>
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('build/assets/app-8JixjSeK.js') }}"></script>
 
 </body>
 </html>

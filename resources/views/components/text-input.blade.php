@@ -1,6 +1,6 @@
 <!-- resources/views/components/text-input.blade.php -->
 
-@props(['name', 'label', 'type', 'value', 'required' => false])
+@props(['name', 'label' => '', 'type', 'value' => '', 'required' => false])
 
 <div class="mb-4">
     <label for="{{ $name }}" class="block text-gray-600 font-bold">{{ $label }}</label>
